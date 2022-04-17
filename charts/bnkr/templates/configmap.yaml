@@ -9,7 +9,7 @@ data:
   SETUP: {{ with .Values.setup }}"true"{{ else }}"false"{{ end }}
   DB_TIMEZONE: {{ default "Europe/Istanbul" .Values.tz }}
   {{ if .Values.postgresql.enabled }}
-  DB_PORT: {{ default 5432 .Values.pgGlobal.postgresql.service.ports.postgresql | quote }}
+  DB_PORT: {{ default 5432 .Values.postgresql.global.postgresql.service.ports.postgresql | quote }}
   {{ else }}
   DB_PORT: {{ default 5432 .Values.database.port | quote }}
   {{ end }}

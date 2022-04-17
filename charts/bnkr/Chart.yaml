@@ -3,7 +3,7 @@ name: bnkr
 home: https://bnkr.is
 description: Kubernetes backup & migration solution designed for human beings!
 type: application
-version: 1.0.0
+version: 1.0.1
 appVersion: 2.0.9
 icon: https://bnkr.is/assets/img/Bnkr-500x150.png
 dependencies:
@@ -11,6 +11,3 @@ dependencies:
     version: 11.1.19
     repository: https://charts.bitnami.com/bitnami
     condition: postgresql.enabled
-    import-values:
-      - child: global
-        parent: pgGlobal
