@@ -3,7 +3,7 @@ name: bnkr
 home: https://bnkr.is
 description: Kubernetes backup & migration solution designed for human beings!
 type: application
-version: 1.0.1
+version: 1.0.2
 appVersion: 2.0.9
 icon: https://bnkr.is/assets/img/Bnkr-500x150.png
 dependencies:
