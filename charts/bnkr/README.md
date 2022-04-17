@@ -51,3 +51,37 @@ When you enable `postgresql` it uses [PostgreSQL packaged by Bitnami](https://ar
 
 Bnkr consumes its required database values from the `postgresql.global` key.
 
+## Usage Example
+1. Create your custom values file like
+    ```yaml
+    # my-values.yaml
+    username: "John Doe"
+    useremail: you@company.com
+    password: "YourStrongPassword"
+    setup: true
+
+    ingress:
+    enabled: true
+    hosts:
+        - host: your-domain.com
+        paths:
+            - path: /
+            pathType: ImplementationSpecific
+    tls:
+        - secretName: your-domain-secret
+        hosts:
+            - your-domain.com
+
+    postgresql:
+    global:
+        postgresql:
+        auth:
+            postgresPassword: "YourStrongPassword"
+            password: "YourStrongPassword"
+    primary:
+        size: 3Gi
+    ```
+ 2. Install the chart
+    ```console
+    helm install my-bnkr bnkr/bnkr --values my-values.yaml
+    ```
