@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "bnkr.fullname" . }}
+data:
+  USERNAME: {{ default "John Doe" .Values.username }}
+  PORT: {{ default "5000" .Values.port | quote }}
+  PRODUCTION: {{ if eq .Values.env "production" }}"true"{{ else }}"false"{{ end }}
+  SETUP: {{ with .Values.setup }}"true"{{ else }}"false"{{ end }}
+  DB_TIMEZONE: {{ default "Europe/Istanbul" .Values.tz }}
+  {{ if .Values.postgresql.enabled }}
+  DB_PORT: {{ default 5432 .Values.pgGlobal.postgresql.service.ports.postgresql | quote }}
+  {{ else }}
+  DB_PORT: {{ default 5432 .Values.database.port | quote }}
+  {{ end }}
+  {{ if .Values.postgresql.enabled }}
+  DB_HOST: {{ include "postgresql.primary.fullname" . }}-postgresql.{{ .Release.Namespace }}.svc.cluster.local
+  {{ else }}
+  DB_HOST: {{ .Values.database.host }}
+  {{ end }}
+  DB_SSLMODE: {{ default "disable" .Values.dbsslmode }}
