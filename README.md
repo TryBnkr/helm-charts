@@ -2,6 +2,8 @@
 
 Kubernetes Helm charts for [BNKR](https://bnkr.is).
 
+> If you are here for BNKR chart, BNKR chart documentation is available in [bnkr directory](https://github.com/TryBnkr/helm-charts/tree/main/charts/bnkr/README.md).
+
 ## Usage
 
 [Helm](https://helm.sh) must be installed to use the charts.

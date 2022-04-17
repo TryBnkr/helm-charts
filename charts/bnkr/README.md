@@ -22,6 +22,8 @@ _You can use `--render-subchart-notes` flag to render the PostgreSQL chart notes
 
 _See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation._
 
+_See `values.yaml` for all the values that you can use with this chart._
+
 ## Uninstall Chart
 
 ```console
