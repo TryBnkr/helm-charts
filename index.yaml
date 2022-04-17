@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  bnkr:
+  - apiVersion: v2
+    appVersion: 2.0.9
+    created: "2022-04-17T15:53:38.230502079Z"
+    dependencies:
+    - condition: postgresql.enabled
+      import-values:
+      - child: global
+        parent: pgGlobal
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.1.19
+    description: Kubernetes backup & migration solution designed for human beings!
+    digest: 14ad4781a23820e5e45976ef0ea63af321b1df4472974ca58d5b7249d2191773
+    home: https://bnkr.is
+    icon: https://bnkr.is/assets/img/Bnkr-500x150.png
+    name: bnkr
+    type: application
+    urls:
+    - https://github.com/TryBnkr/helm-charts/releases/download/bnkr-1.0.0/bnkr-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-04-17T15:53:38.230508379Z"
