@@ -3,6 +3,23 @@ entries:
   bnkr:
   - apiVersion: v2
     appVersion: 2.1.0
+    created: "2022-08-11T20:55:17.319287045Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.1.19
+    description: Kubernetes backup & migration solution designed for human beings!
+    digest: ef3221ad24e7dc5c46291c3dced9708f514f56734c2986281c80e10e1e1d7e4e
+    home: https://bnkr.is
+    icon: https://bnkr.is/assets/img/Bnkr-500x150.png
+    name: bnkr
+    type: application
+    urls:
+    - https://github.com/TryBnkr/helm-charts/releases/download/bnkr-1.0.5/bnkr-1.0.5.tgz
+    version: 1.0.5
+  - apiVersion: v2
+    appVersion: 2.1.0
     created: "2022-05-17T19:33:40.061438457Z"
     dependencies:
     - condition: postgresql.enabled
@@ -89,4 +106,4 @@ entries:
     urls:
     - https://github.com/TryBnkr/helm-charts/releases/download/bnkr-1.0.0/bnkr-1.0.0.tgz
     version: 1.0.0
-generated: "2022-05-17T19:33:40.061462657Z"
+generated: "2022-08-11T20:55:17.319313347Z"
