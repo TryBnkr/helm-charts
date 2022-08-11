@@ -32,5 +32,5 @@ Get the application URL by running these commands:
 
 First user credentials:
 
-  Email: kubectl get secret --namespace {{ .Release.Namespace }} {{ include "bnkr.fullname" . }} -o go-template='{{.data.USEREMAIL|base64decode}}{{ "\n" }}'
-  Password : kubectl get secret --namespace {{ .Release.Namespace }} {{ include "bnkr.fullname" . }} -o go-template='{{.data.USERPASSWORD|base64decode}}{{ "\n" }}'
+  echo Email: $(kubectl get secret --namespace {{ .Release.Namespace }} {{ include "bnkr.fullname" . }} -o jsonpath="{.data.USEREMAIL}" | base64 -d)
+  echo Password: $(kubectl get secret --namespace {{ .Release.Namespace }} {{ include "bnkr.fullname" . }} -o jsonpath="{.data.USERPASSWORD}" | base64 -d)
